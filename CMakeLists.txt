@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 # Project information
-project(Projet_Moteur_de_jeux VERSION 1.0)
+project(Projet_VR VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
@@ -29,6 +29,13 @@ set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/imgui-1.90.4)
 file(GLOB IMGUI_SOURCES ${IMGUI_DIR}/src/*.cpp)
 add_library(imgui STATIC ${IMGUI_SOURCES})
 target_include_directories(imgui PUBLIC ${IMGUI_DIR}/include ${IMGUI_DIR}/backends)
+
+# OpenXR setup
+set(OpenXR_SDK_PATH ${CMAKE_CURRENT_SOURCE_DIR}/external/OpenXR-SDK)
+include_directories(${OpenXR_SDK_PATH}/include)
+link_directories(${OpenXR_SDK_PATH}/build/src/loader)
+
+
 
 # Find and link OpenGL
 find_package(OpenGL REQUIRED)
@@ -59,7 +66,7 @@ include_directories(
 )
 
 # Linking libraries
-target_link_libraries(main glfw glad imgui)
+target_link_libraries(main glfw glad imgui ${OpenXR_SDK_PATH}/build/src/loader/libopenxr_loader.so)
 
 # Output directories
 set_target_properties(glad imgui PROPERTIES

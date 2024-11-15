@@ -21,6 +21,9 @@
 #include "../external/glm/gtc/matrix_transform.hpp"
 #include "../external/glm/gtc/type_ptr.hpp"
 
+#include <openxr/openxr.h>
+#include <openxr/openxr_platform.h>
+
 #include <Window.hpp>
 #include <Shader.hpp>
 #include <stb_image.h>
