@@ -1,0 +1,1278 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      The system is: Linux - 6.8.0-48-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:22 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-oAN3mb"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-oAN3mb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-oAN3mb'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_45ffa/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_45ffa.dir/build.make CMakeFiles/cmTC_45ffa.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-oAN3mb'
+        Building C object CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.2.0-23ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45ffa.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_45ffa.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccutciOR.s
+        GNU C17 (Ubuntu 13.2.0-23ubuntu4) version 13.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 35e51c4ef55ea8f6b448d85f0fac5984
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45ffa.dir/'
+         as -v --64 -o CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o /tmp/ccutciOR.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_45ffa
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45ffa.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o -o cmTC_45ffa 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.2.0-23ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45ffa' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_45ffa.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXciJ31.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_45ffa /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45ffa' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_45ffa.'
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-oAN3mb'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-oAN3mb']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_45ffa/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_45ffa.dir/build.make CMakeFiles/cmTC_45ffa.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-oAN3mb']
+        ignore line: [Building C object CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.2.0-23ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45ffa.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_45ffa.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccutciOR.s]
+        ignore line: [GNU C17 (Ubuntu 13.2.0-23ubuntu4) version 13.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 35e51c4ef55ea8f6b448d85f0fac5984]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45ffa.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o /tmp/ccutciOR.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_45ffa]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45ffa.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o -o cmTC_45ffa ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.2.0-23ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45ffa' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_45ffa.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXciJ31.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_45ffa /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccXciJ31.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_45ffa] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [CMakeFiles/cmTC_45ffa.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:22 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-7NNDap"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-7NNDap"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-7NNDap'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9e3d3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9e3d3.dir/build.make CMakeFiles/cmTC_9e3d3.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-7NNDap'
+        Building CXX object CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.2.0-23ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e3d3.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9e3d3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccRMtztM.s
+        GNU C++17 (Ubuntu 13.2.0-23ubuntu4) version 13.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/13"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/include/c++/13
+         /usr/include/x86_64-linux-gnu/c++/13
+         /usr/include/c++/13/backward
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 4e0f319cd9945d8f5a9eeeeec1481ba5
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e3d3.dir/'
+         as -v --64 -o CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccRMtztM.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_9e3d3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e3d3.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9e3d3 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.2.0-23ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9e3d3' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9e3d3.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cctfZx3S.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9e3d3 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9e3d3' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9e3d3.'
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-7NNDap'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/include/c++/13]
+          add: [/usr/include/x86_64-linux-gnu/c++/13]
+          add: [/usr/include/c++/13/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/include/c++/13] ==> [/usr/include/c++/13]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/13] ==> [/usr/include/x86_64-linux-gnu/c++/13]
+        collapse include dir [/usr/include/c++/13/backward] ==> [/usr/include/c++/13/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/13;/usr/include/x86_64-linux-gnu/c++/13;/usr/include/c++/13/backward;/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:22 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-7NNDap']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9e3d3/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_9e3d3.dir/build.make CMakeFiles/cmTC_9e3d3.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-7NNDap']
+        ignore line: [Building CXX object CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.2.0-23ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e3d3.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9e3d3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccRMtztM.s]
+        ignore line: [GNU C++17 (Ubuntu 13.2.0-23ubuntu4) version 13.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/13"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/include/c++/13]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/13]
+        ignore line: [ /usr/include/c++/13/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 4e0f319cd9945d8f5a9eeeeec1481ba5]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e3d3.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccRMtztM.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_9e3d3]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e3d3.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9e3d3 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.2.0-23ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-uJ7kn6/gcc-13-13.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.0 (Ubuntu 13.2.0-23ubuntu4) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9e3d3' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9e3d3.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cctfZx3S.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9e3d3 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cctfZx3S.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_9e3d3] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [CMakeFiles/cmTC_9e3d3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "src/cmake/StdFilesystemFlags.cmake:146 (check_cxx_source_compiles)"
+      - "src/CMakeLists.txt:27 (include)"
+    checks:
+      - "Performing Test HAVE_FILESYSTEM_WITHOUT_LIB"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yCUV4k"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yCUV4k"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_FILESYSTEM_WITHOUT_LIB"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yCUV4k'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a2277/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a2277.dir/build.make CMakeFiles/cmTC_a2277.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yCUV4k »
+        Building CXX object CMakeFiles/cmTC_a2277.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_FILESYSTEM_WITHOUT_LIB -I/home/lohik/Bureau/OpenXR-SDK/src/common -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -std=gnu++14 -fPIE -o CMakeFiles/cmTC_a2277.dir/src.cxx.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yCUV4k/src.cxx
+        Linking CXX executable cmTC_a2277
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2277.dir/link.txt --verbose=1
+        /usr/bin/c++  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_a2277.dir/src.cxx.o -o cmTC_a2277 
+        /usr/bin/ld : CMakeFiles/cmTC_a2277.dir/src.cxx.o : dans la fonction « std::experimental::filesystem::v1::is_regular_file(std::experimental::filesystem::v1::__cxx11::path const&) » :
+        src.cxx:(.text._ZNSt12experimental10filesystem2v115is_regular_fileERKNS1_7__cxx114pathE[_ZNSt12experimental10filesystem2v115is_regular_fileERKNS1_7__cxx114pathE]+0x18) : référence indéfinie vers « std::experimental::filesystem::v1::status(std::experimental::filesystem::v1::__cxx11::path const&) »
+        /usr/bin/ld : CMakeFiles/cmTC_a2277.dir/src.cxx.o : dans la fonction « std::experimental::filesystem::v1::__cxx11::path::path<char [2], std::experimental::filesystem::v1::__cxx11::path>(char const (&) [2]) » :
+        src.cxx:(.text._ZNSt12experimental10filesystem2v17__cxx114pathC2IA2_cS3_EERKT_[_ZNSt12experimental10filesystem2v17__cxx114pathC5IA2_cS3_EERKT_]+0x6e) : référence indéfinie vers « std::experimental::filesystem::v1::__cxx11::path::_M_split_cmpts() »
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_a2277.dir/build.make:99 : cmTC_a2277] Erreur 1
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yCUV4k »
+        gmake: *** [Makefile:127 : cmTC_a2277/fast] Erreur 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "src/cmake/StdFilesystemFlags.cmake:150 (check_cxx_source_compiles)"
+      - "src/CMakeLists.txt:27 (include)"
+    checks:
+      - "Performing Test HAVE_FILESYSTEM_NEEDING_LIBSTDCXXFS"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-XQVyp2"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-XQVyp2"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_FILESYSTEM_NEEDING_LIBSTDCXXFS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-XQVyp2'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ddd84/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ddd84.dir/build.make CMakeFiles/cmTC_ddd84.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-XQVyp2 »
+        Building CXX object CMakeFiles/cmTC_ddd84.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_FILESYSTEM_NEEDING_LIBSTDCXXFS -I/home/lohik/Bureau/OpenXR-SDK/src/common -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -std=gnu++14 -fPIE -o CMakeFiles/cmTC_ddd84.dir/src.cxx.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-XQVyp2/src.cxx
+        Linking CXX executable cmTC_ddd84
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddd84.dir/link.txt --verbose=1
+        /usr/bin/c++  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_ddd84.dir/src.cxx.o -o cmTC_ddd84  -lstdc++fs 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-XQVyp2 »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "src/cmake/StdFilesystemFlags.cmake:154 (check_cxx_source_compiles)"
+      - "src/CMakeLists.txt:27 (include)"
+    checks:
+      - "Performing Test HAVE_FILESYSTEM_NEEDING_LIBCXXFS"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-IIgkkh"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-IIgkkh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_FILESYSTEM_NEEDING_LIBCXXFS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-IIgkkh'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4e9c5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4e9c5.dir/build.make CMakeFiles/cmTC_4e9c5.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-IIgkkh »
+        Building CXX object CMakeFiles/cmTC_4e9c5.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_FILESYSTEM_NEEDING_LIBCXXFS -I/home/lohik/Bureau/OpenXR-SDK/src/common -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -std=gnu++14 -fPIE -o CMakeFiles/cmTC_4e9c5.dir/src.cxx.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-IIgkkh/src.cxx
+        Linking CXX executable cmTC_4e9c5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e9c5.dir/link.txt --verbose=1
+        /usr/bin/c++  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_4e9c5.dir/src.cxx.o -o cmTC_4e9c5  -lc++fs 
+        /usr/bin/ld : ne peut pas trouver -lc++fs : Aucun fichier ou dossier de ce nom
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_4e9c5.dir/build.make:99 : cmTC_4e9c5] Erreur 1
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-IIgkkh »
+        gmake: *** [Makefile:127 : cmTC_4e9c5/fast] Erreur 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "src/CMakeLists.txt:124 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Gw0eBN"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Gw0eBN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Gw0eBN'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_47fa1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_47fa1.dir/build.make CMakeFiles/cmTC_47fa1.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Gw0eBN »
+        Building C object CMakeFiles/cmTC_47fa1.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_47fa1.dir/src.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Gw0eBN/src.c
+        Linking C executable cmTC_47fa1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47fa1.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_47fa1.dir/src.c.o -o cmTC_47fa1 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Gw0eBN »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:682 (check_library_exists)"
+      - "src/cmake/presentation.cmake:19 (find_package)"
+      - "src/CMakeLists.txt:261 (include)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-YOpgaC"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-YOpgaC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-YOpgaC'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_91df8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_91df8.dir/build.make CMakeFiles/cmTC_91df8.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-YOpgaC »
+        Building C object CMakeFiles/cmTC_91df8.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_91df8.dir/CheckFunctionExists.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-YOpgaC/CheckFunctionExists.c
+        Linking C executable cmTC_91df8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91df8.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_91df8.dir/CheckFunctionExists.c.o -o cmTC_91df8  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-YOpgaC »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:697 (check_function_exists)"
+      - "src/cmake/presentation.cmake:19 (find_package)"
+      - "src/CMakeLists.txt:261 (include)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-TGE1TR"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-TGE1TR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-TGE1TR'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b44d7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b44d7.dir/build.make CMakeFiles/cmTC_b44d7.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-TGE1TR »
+        Building C object CMakeFiles/cmTC_b44d7.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_b44d7.dir/CheckFunctionExists.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-TGE1TR/CheckFunctionExists.c
+        Linking C executable cmTC_b44d7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b44d7.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_b44d7.dir/CheckFunctionExists.c.o -o cmTC_b44d7 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-TGE1TR »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:711 (check_function_exists)"
+      - "src/cmake/presentation.cmake:19 (find_package)"
+      - "src/CMakeLists.txt:261 (include)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-uZytwz"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-uZytwz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-uZytwz'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6bdd7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6bdd7.dir/build.make CMakeFiles/cmTC_6bdd7.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-uZytwz »
+        Building C object CMakeFiles/cmTC_6bdd7.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_6bdd7.dir/CheckFunctionExists.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-uZytwz/CheckFunctionExists.c
+        Linking C executable cmTC_6bdd7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6bdd7.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_6bdd7.dir/CheckFunctionExists.c.o -o cmTC_6bdd7 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-uZytwz »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:720 (check_function_exists)"
+      - "src/cmake/presentation.cmake:19 (find_package)"
+      - "src/CMakeLists.txt:261 (include)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-R1JO8A"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-R1JO8A"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-R1JO8A'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e4777/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e4777.dir/build.make CMakeFiles/cmTC_e4777.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-R1JO8A »
+        Building C object CMakeFiles/cmTC_e4777.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_e4777.dir/CheckFunctionExists.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-R1JO8A/CheckFunctionExists.c
+        Linking C executable cmTC_e4777
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4777.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_e4777.dir/CheckFunctionExists.c.o -o cmTC_e4777 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-R1JO8A »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:729 (check_function_exists)"
+      - "src/cmake/presentation.cmake:19 (find_package)"
+      - "src/CMakeLists.txt:261 (include)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-qtblyU"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-qtblyU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-qtblyU'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_47f79/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_47f79.dir/build.make CMakeFiles/cmTC_47f79.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-qtblyU »
+        Building C object CMakeFiles/cmTC_47f79.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_47f79.dir/CheckFunctionExists.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-qtblyU/CheckFunctionExists.c
+        Linking C executable cmTC_47f79
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47f79.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_47f79.dir/CheckFunctionExists.c.o -o cmTC_47f79 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-qtblyU »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindX11.cmake:739 (check_library_exists)"
+      - "src/cmake/presentation.cmake:19 (find_package)"
+      - "src/CMakeLists.txt:261 (include)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-eIOqHP"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-eIOqHP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-eIOqHP'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_581be/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_581be.dir/build.make CMakeFiles/cmTC_581be.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-eIOqHP »
+        Building C object CMakeFiles/cmTC_581be.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_581be.dir/CheckFunctionExists.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-eIOqHP/CheckFunctionExists.c
+        Linking C executable cmTC_581be
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_581be.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_581be.dir/CheckFunctionExists.c.o -o cmTC_581be  -lICE 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-eIOqHP »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "src/CMakeLists.txt:407 (check_function_exists)"
+    checks:
+      - "Looking for secure_getenv"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wezdgt"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wezdgt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SECURE_GETENV"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wezdgt'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d9c12/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d9c12.dir/build.make CMakeFiles/cmTC_d9c12.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wezdgt »
+        Building C object CMakeFiles/cmTC_d9c12.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=secure_getenv -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_d9c12.dir/CheckFunctionExists.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wezdgt/CheckFunctionExists.c
+        Linking C executable cmTC_d9c12
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9c12.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=secure_getenv -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_d9c12.dir/CheckFunctionExists.c.o -o cmTC_d9c12 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wezdgt »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "src/CMakeLists.txt:408 (check_function_exists)"
+    checks:
+      - "Looking for __secure_getenv"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yPGxmB"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yPGxmB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE___SECURE_GETENV"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yPGxmB'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_84bb3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_84bb3.dir/build.make CMakeFiles/cmTC_84bb3.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yPGxmB »
+        Building C object CMakeFiles/cmTC_84bb3.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=__secure_getenv -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_84bb3.dir/CheckFunctionExists.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yPGxmB/CheckFunctionExists.c
+        Linking C executable cmTC_84bb3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84bb3.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=__secure_getenv -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_84bb3.dir/CheckFunctionExists.c.o -o cmTC_84bb3 
+        /usr/bin/ld : CMakeFiles/cmTC_84bb3.dir/CheckFunctionExists.c.o : dans la fonction « main » :
+        CheckFunctionExists.c:(.text+0x14) : référence indéfinie vers « __secure_getenv »
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_84bb3.dir/build.make:99 : cmTC_84bb3] Erreur 1
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-yPGxmB »
+        gmake: *** [Makefile:127 : cmTC_84bb3/fast] Erreur 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "src/CMakeLists.txt:413 (check_symbol_exists)"
+    checks:
+      - "Looking for timespec_get"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-y13fX4"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-y13fX4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_TIMESPEC_GET"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-y13fX4'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b839d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b839d.dir/build.make CMakeFiles/cmTC_b839d.dir/build
+        gmake[1] : on entre dans le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-y13fX4 »
+        Building C object CMakeFiles/cmTC_b839d.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE -o CMakeFiles/cmTC_b839d.dir/CheckSymbolExists.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-y13fX4/CheckSymbolExists.c
+        Linking C executable cmTC_b839d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b839d.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_b839d.dir/CheckSymbolExists.c.o -o cmTC_b839d 
+        gmake[1] : on quitte le répertoire « /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-y13fX4 »
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "src/CMakeLists.txt:555 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_Wall"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-9Mgv1u"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-9Mgv1u"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "SUPPORTS_Wall"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-9Mgv1u'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_93cef/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_93cef.dir/build.make CMakeFiles/cmTC_93cef.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-9Mgv1u'
+        Building CXX object CMakeFiles/cmTC_93cef.dir/src.cxx.o
+        /usr/bin/c++ -DSUPPORTS_Wall  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -std=gnu++14 -fPIE   -Wall -o CMakeFiles/cmTC_93cef.dir/src.cxx.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-9Mgv1u/src.cxx
+        Linking CXX executable cmTC_93cef
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93cef.dir/link.txt --verbose=1
+        /usr/bin/c++  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_93cef.dir/src.cxx.o -o cmTC_93cef 
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-9Mgv1u'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "src/CMakeLists.txt:559 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_C_Wall"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wxppeD"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wxppeD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "SUPPORTS_C_Wall"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wxppeD'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8cfb5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8cfb5.dir/build.make CMakeFiles/cmTC_8cfb5.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wxppeD'
+        Building C object CMakeFiles/cmTC_8cfb5.dir/src.c.o
+        /usr/bin/cc -DSUPPORTS_C_Wall  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE   -Wall -o CMakeFiles/cmTC_8cfb5.dir/src.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wxppeD/src.c
+        Linking C executable cmTC_8cfb5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8cfb5.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_8cfb5.dir/src.c.o -o cmTC_8cfb5 
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-wxppeD'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "src/CMakeLists.txt:555 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_Werrorunusedparameter"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-x3eKCh"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-x3eKCh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "SUPPORTS_Werrorunusedparameter"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-x3eKCh'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e2879/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e2879.dir/build.make CMakeFiles/cmTC_e2879.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-x3eKCh'
+        Building CXX object CMakeFiles/cmTC_e2879.dir/src.cxx.o
+        /usr/bin/c++ -DSUPPORTS_Werrorunusedparameter  -Wall -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -std=gnu++14 -fPIE   -Werror=unused-parameter -o CMakeFiles/cmTC_e2879.dir/src.cxx.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-x3eKCh/src.cxx
+        Linking CXX executable cmTC_e2879
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2879.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_e2879.dir/src.cxx.o -o cmTC_e2879 
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-x3eKCh'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "src/CMakeLists.txt:559 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_C_Werrorunusedparameter"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Amtw08"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Amtw08"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -Wall"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "SUPPORTS_C_Werrorunusedparameter"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Amtw08'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3abdb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3abdb.dir/build.make CMakeFiles/cmTC_3abdb.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Amtw08'
+        Building C object CMakeFiles/cmTC_3abdb.dir/src.c.o
+        /usr/bin/cc -DSUPPORTS_C_Werrorunusedparameter  -Wall -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE   -Werror=unused-parameter -o CMakeFiles/cmTC_3abdb.dir/src.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Amtw08/src.c
+        Linking C executable cmTC_3abdb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3abdb.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_3abdb.dir/src.c.o -o cmTC_3abdb 
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-Amtw08'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "src/CMakeLists.txt:555 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_Werrorunusedargument"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-ST0Pbs"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-ST0Pbs"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Werror=unused-parameter"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "SUPPORTS_Werrorunusedargument"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-ST0Pbs'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f9a57/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f9a57.dir/build.make CMakeFiles/cmTC_f9a57.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-ST0Pbs'
+        Building CXX object CMakeFiles/cmTC_f9a57.dir/src.cxx.o
+        /usr/bin/c++ -DSUPPORTS_Werrorunusedargument  -Wall -Werror=unused-parameter -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -std=gnu++14 -fPIE   -Werror=unused-argument -o CMakeFiles/cmTC_f9a57.dir/src.cxx.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-ST0Pbs/src.cxx
+        cc1plus: error: '-Werror=unused-argument': no option '-Wunused-argument'; did you mean '-Wunused-dummy-argument'?
+        gmake[1]: *** [CMakeFiles/cmTC_f9a57.dir/build.make:78: CMakeFiles/cmTC_f9a57.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-ST0Pbs'
+        gmake: *** [Makefile:127: cmTC_f9a57/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "src/CMakeLists.txt:559 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_C_Werrorunusedargument"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-vwNuwn"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-vwNuwn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -Wall -Werror=unused-parameter"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "SUPPORTS_C_Werrorunusedargument"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-vwNuwn'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_35b33/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_35b33.dir/build.make CMakeFiles/cmTC_35b33.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-vwNuwn'
+        Building C object CMakeFiles/cmTC_35b33.dir/src.c.o
+        /usr/bin/cc -DSUPPORTS_C_Werrorunusedargument  -Wall -Werror=unused-parameter -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE   -Werror=unused-argument -o CMakeFiles/cmTC_35b33.dir/src.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-vwNuwn/src.c
+        cc1: error: '-Werror=unused-argument': no option '-Wunused-argument'; did you mean '-Wunused-dummy-argument'?
+        gmake[1]: *** [CMakeFiles/cmTC_35b33.dir/build.make:78: CMakeFiles/cmTC_35b33.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-vwNuwn'
+        gmake: *** [Makefile:127: cmTC_35b33/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "src/CMakeLists.txt:555 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_Wpointerarith"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-1a9jpO"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-1a9jpO"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Werror=unused-parameter"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "SUPPORTS_Wpointerarith"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-1a9jpO'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0e24e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0e24e.dir/build.make CMakeFiles/cmTC_0e24e.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-1a9jpO'
+        Building CXX object CMakeFiles/cmTC_0e24e.dir/src.cxx.o
+        /usr/bin/c++ -DSUPPORTS_Wpointerarith  -Wall -Werror=unused-parameter -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -std=gnu++14 -fPIE   -Wpointer-arith -o CMakeFiles/cmTC_0e24e.dir/src.cxx.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-1a9jpO/src.cxx
+        Linking CXX executable cmTC_0e24e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e24e.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Werror=unused-parameter -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_0e24e.dir/src.cxx.o -o cmTC_0e24e 
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-1a9jpO'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "src/CMakeLists.txt:559 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test SUPPORTS_C_Wpointerarith"
+    directories:
+      source: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-JbS99b"
+      binary: "/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-JbS99b"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -Wall -Werror=unused-parameter"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/lohik/Bureau/OpenXR-SDK/src/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "SUPPORTS_C_Wpointerarith"
+      cached: true
+      stdout: |
+        Change Dir: '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-JbS99b'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_36d4b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_36d4b.dir/build.make CMakeFiles/cmTC_36d4b.dir/build
+        gmake[1]: Entering directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-JbS99b'
+        Building C object CMakeFiles/cmTC_36d4b.dir/src.c.o
+        /usr/bin/cc -DSUPPORTS_C_Wpointerarith  -Wall -Werror=unused-parameter -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE -fPIE   -Wpointer-arith -o CMakeFiles/cmTC_36d4b.dir/src.c.o -c /home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-JbS99b/src.c
+        Linking C executable cmTC_36d4b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36d4b.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wall -Werror=unused-parameter -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=TRUE CMakeFiles/cmTC_36d4b.dir/src.c.o -o cmTC_36d4b 
+        gmake[1]: Leaving directory '/home/lohik/Bureau/OpenXR-SDK/build/CMakeFiles/CMakeScratch/TryCompile-JbS99b'
+        
+      exitCode: 0
+...
