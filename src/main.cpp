@@ -60,7 +60,18 @@ void mouse_cursor_callback(GLFWwindow* window, double xpos, double ypos){
 
 }
 
+XrInstance instance;
+XrInstanceCreateInfo createInfo = {XR_TYPE_INSTANCE_CREATE_INFO};
+
 int main(){
+
+    strcpy(createInfo.applicationInfo.applicationName, "MinecraftVR");
+    createInfo.applicationInfo.applicationVersion = 1;
+    snprintf(createInfo.applicationInfo.engineName, XR_MAX_ENGINE_NAME_SIZE, "VoxelImagineEngine");
+    createInfo.applicationInfo.engineVersion = 1;
+    createInfo.applicationInfo.apiVersion = XR_CURRENT_API_VERSION;
+    xrCreateInstance(&createInfo, &instance);
+
     if( !glfwInit()){
         fprintf( stderr, "Failed to initialize GLFW\n" );
         //getchar();
