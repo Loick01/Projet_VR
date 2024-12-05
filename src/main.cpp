@@ -70,7 +70,17 @@ int main(){
     snprintf(createInfo.applicationInfo.engineName, XR_MAX_ENGINE_NAME_SIZE, "VoxelImagineEngine");
     createInfo.applicationInfo.engineVersion = 1;
     createInfo.applicationInfo.apiVersion = XR_CURRENT_API_VERSION;
-    xrCreateInstance(&createInfo, &instance);
+
+    XrResult result = xrCreateInstance(&createInfo, &instance);
+
+    if (result != XR_SUCCESS) {
+        std::cerr << "Failed to create OpenXR instance: " << result << std::endl;
+        return -1;
+    }
+
+    std::cout << "OpenXR instance created successfully!" << std::endl;
+
+    xrDestroyInstance(instance);
 
     if( !glfwInit()){
         fprintf( stderr, "Failed to initialize GLFW\n" );
