@@ -2,6 +2,7 @@ package com.example.voxel_vr;
 
 import android.app.Activity;
 import android.opengl.GLES32;
+import android.opengl.Matrix;
 import android.os.Bundle;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
@@ -22,14 +23,32 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
     ActivityMainBinding mBinding;
 
     float[] mVerticesData = new float[]{
-            0.0F, 0.5F, 0.0F,
-            -0.5F, 0.0F, 0.0F,
-            0.5F, 0.0F, 0.0F,
+            -0.5F, 0.5F, 0.0F,
+            -0.5F, 0.1F, 0.0F,
+            0.5F, 0.1F, 0.0F,
 
-            0.0F, -0.5F, 0.0F,
-            -0.5F, 0.0F, 0.0F,
-            0.5F, 0.0F, 0.0F
+            -0.5F, 0.5F, 0.0F,
+            0.5F, 0.1F, 0.0F,
+            0.5F, 0.5F, 0.0F
     };
+
+    float[] mVerticesData2 = new float[]{
+            -0.5F, -0.5F, 0.0F,
+            -0.5F, -0.1F, 0.0F,
+            0.5F, -0.1F, -1.25F,
+
+            -0.5F, -0.5F, 0.0F,
+            0.5F, -0.1F, -1.25F,
+            0.5F, -0.5F, -1.25F
+    };
+
+    private float[] model;
+    private float[] view;
+    private float[] projection;
+    private float[] identity;
+    private int glModel, glView, glProjection;
+    private float mWidth;
+    private float mHeight;
 
     final static int BytesPerFloat = 4;
     final static int BytesPerShort = 2;
@@ -105,6 +124,7 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
     }
 
     private int gl_vArray;
+    private int gl_vArray2;
     private int gl_program;
 
     @Override
@@ -128,13 +148,30 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
         GLES32.glClearColor(0.28F,0.56F,0.96F,1.0F);
 
 
-        gl_program = createProgram("shader");
+        gl_program = createProgram("modelviewprojection");
 
         GLES32.glUseProgram(gl_program);
-        int gl_position = GLES32.glGetAttribLocation(gl_program,"position");
+        int gl_position = GLES32.glGetAttribLocation(gl_program,"a_Position");
+        glModel = GLES32.glGetUniformLocation(gl_program,"a_Model");
+        glView = GLES32.glGetUniformLocation(gl_program,"a_View");
+        glProjection = GLES32.glGetUniformLocation(gl_program,"a_Projection");
 
         int[] tmp = sendVertexDataToGL(mVerticesData, gl_position);
         gl_vArray = tmp[0];
+
+        tmp = sendVertexDataToGL(mVerticesData2, gl_position);
+        gl_vArray2 = tmp[0];
+
+        model = new float[16];
+        view = new float[16];
+        projection = new float[16];
+        identity = new float[16];
+        Matrix.setIdentityM(model, 0);
+        Matrix.setIdentityM(view, 0);
+        Matrix.setIdentityM(projection, 0);
+        Matrix.setIdentityM(identity, 0);
+
+        Matrix.translateM(view, 0, 0.0F, 0.0F, -3.0F); // Placement initial de la caméra
     }
 
     private int[] sendVertexDataToGL(float[] data, int gl_position){
@@ -163,7 +200,12 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
+        mWidth = width;
+        mHeight = height;
 
+        GLES32.glViewport(0,0,width,height);
+        float aspect = mWidth/mHeight;
+        Matrix.perspectiveM(projection, 0, 45.0F, aspect, 0.1F, 100.0F);
     }
 
     int loop = 0;
@@ -172,8 +214,20 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
         checkErr(++loop);
         GLES32.glClear(GLES32.GL_COLOR_BUFFER_BIT | GLES32.GL_DEPTH_BUFFER_BIT);
 
+        Matrix.rotateM(model, 0, 3F, 0,1,0);
         GLES32.glUseProgram(gl_program);
+        GLES32.glUniformMatrix4fv(glModel, 1, false, model, 0);
+        GLES32.glUniformMatrix4fv(glView, 1, false, view, 0);
+        GLES32.glUniformMatrix4fv(glProjection, 1, false, projection, 0);
+        
+        int gl_color = GLES32.glGetUniformLocation(gl_program,"a_Color");
+        GLES32.glUniform3f(gl_color, 0.0F, 1.0F, 0.0F);
         GLES32.glBindVertexArray(gl_vArray);
+        GLES32.glDrawArrays(GLES32.GL_TRIANGLES,0,6);
+
+        GLES32.glUniformMatrix4fv(glModel, 1, false, identity, 0);
+        GLES32.glUniform3f(gl_color, 1.0F, 0.0F, 0.0F);
+        GLES32.glBindVertexArray(gl_vArray2);
         GLES32.glDrawArrays(GLES32.GL_TRIANGLES,0,6);
     }
 }
