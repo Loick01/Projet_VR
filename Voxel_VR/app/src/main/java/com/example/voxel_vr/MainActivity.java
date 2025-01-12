@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.opengl.GLES32;
 import android.os.Bundle;
 import android.opengl.GLSurfaceView;
+import android.util.Log;
 
 import com.example.voxel_vr.databinding.ActivityMainBinding;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
@@ -20,29 +24,85 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
     float[] mVerticesData = new float[]{
             0.0F, 0.5F, 0.0F,
             -0.5F, 0.0F, 0.0F,
+            0.5F, 0.0F, 0.0F,
+
+            0.0F, -0.5F, 0.0F,
+            -0.5F, 0.0F, 0.0F,
             0.5F, 0.0F, 0.0F
     };
 
     final static int BytesPerFloat = 4;
     final static int BytesPerShort = 2;
     final static int FloatsPerPosition = 3;
+    private static String TAG = MainActivity.class.getSimpleName();
 
-    private String vertex_shader_code = String.join("\n",
-            "#version 300 es",
-            "in vec3 position;",
-            "",
-            "void main(){",
-            "    gl_Position = vec4(position, 1.0f);",
-            "}");
+    private String readAssetFile(String fileName){
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader( new InputStreamReader(getAssets().open(fileName)) );
+            StringBuilder sb = new StringBuilder();
+            String mLine;
+            while ((mLine = reader.readLine()) != null) {
+                sb.append(mLine);
+                sb.append("\n");
+            }
+            return  sb.toString();
+        } catch (IOException e) {
+            Log.e(TAG, e.toString());
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    Log.e(TAG, e.toString());
+                }
+            }
+        }
+        return null;
+    }
 
-    private String fragment_shader_code = String.join("\n",
-            "#version 300 es",
-            "precision mediump float;",
-            "",
-            "out vec4 outColor;",
-            "void main(){",
-            "    outColor = vec4(1.0f,0.0f,0.0f,1.0f);",
-            "}");
+    private int compileShader(String name, int type){
+        String shaderCode;
+        if(type == GLES32.GL_VERTEX_SHADER){
+            shaderCode = readAssetFile(name+".vert");
+        }else{
+            shaderCode = readAssetFile(name+".frag");
+        }
+        int shaderId = GLES32.glCreateShader(type);
+        GLES32.glShaderSource(shaderId, shaderCode);
+        GLES32.glCompileShader(shaderId);
+
+        // Get the compilation status.
+        final int[] compileStatus = new int[1];
+        GLES32.glGetShaderiv(shaderId, GLES32.GL_COMPILE_STATUS, compileStatus, 0);
+        if (compileStatus[0] == 0) {
+            String str = GLES32.glGetShaderInfoLog(shaderId);
+            Log.e(TAG, "Error compiling shader: " + str);
+            GLES32.glDeleteShader(shaderId);
+            return -1;
+        }
+        return shaderId;
+    }
+
+    private int createProgram(String name){
+        int vertexShaderId =  compileShader(name, GLES32.GL_VERTEX_SHADER);
+
+        int fragmentShaderId = compileShader(name, GLES32.GL_FRAGMENT_SHADER);
+
+        int programId = GLES32.glCreateProgram();
+        GLES32.glAttachShader(programId, vertexShaderId);
+        GLES32.glAttachShader(programId, fragmentShaderId);
+        GLES32.glLinkProgram(programId);
+        checkErr(0);
+        int[] success = new int[1];
+        GLES32.glGetProgramiv(programId, GLES32.GL_LINK_STATUS, success, 0);
+        // error
+        if(success[0] == 0){
+            String str = GLES32.glGetProgramInfoLog(programId);
+            Log.e(TAG, str);
+        }
+        return programId;
+    }
 
     private int gl_vArray;
     private int gl_program;
@@ -56,22 +116,19 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
         mBinding.surfaceView.setRenderer(this);
     }
 
+    private void checkErr(int loop){
+        int err = GLES32.glGetError();
+        if (err != 0){
+            Log.d("Err("," " + err + ") in loop (" + loop + ")");
+        }
+    }
+
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         GLES32.glClearColor(0.28F,0.56F,0.96F,1.0F);
 
-        int vertex_shader_id = GLES32.glCreateShader(GLES32.GL_VERTEX_SHADER);
-        GLES32.glShaderSource(vertex_shader_id, vertex_shader_code);
-        GLES32.glCompileShader(vertex_shader_id);
 
-        int fragment_shader_id = GLES32.glCreateShader(GLES32.GL_FRAGMENT_SHADER);
-        GLES32.glShaderSource(fragment_shader_id, fragment_shader_code);
-        GLES32.glCompileShader(fragment_shader_id);
-
-        gl_program = GLES32.glCreateProgram();
-        GLES32.glAttachShader(gl_program, vertex_shader_id);
-        GLES32.glAttachShader(gl_program, fragment_shader_id);
-        GLES32.glLinkProgram(gl_program);
+        gl_program = createProgram("shader");
 
         GLES32.glUseProgram(gl_program);
         int gl_position = GLES32.glGetAttribLocation(gl_program,"position");
@@ -109,12 +166,14 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
 
     }
 
+    int loop = 0;
     @Override
     public void onDrawFrame(GL10 gl) {
+        checkErr(++loop);
         GLES32.glClear(GLES32.GL_COLOR_BUFFER_BIT | GLES32.GL_DEPTH_BUFFER_BIT);
 
         GLES32.glUseProgram(gl_program);
         GLES32.glBindVertexArray(gl_vArray);
-        GLES32.glDrawArrays(GLES32.GL_TRIANGLES,0,3);
+        GLES32.glDrawArrays(GLES32.GL_TRIANGLES,0,6);
     }
 }
