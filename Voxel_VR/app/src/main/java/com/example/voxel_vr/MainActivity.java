@@ -1,11 +1,21 @@
 package com.example.voxel_vr;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.opengl.GLES32;
+import android.opengl.GLUtils;
 import android.opengl.Matrix;
 import android.os.Bundle;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.voxel_vr.databinding.ActivityMainBinding;
 
@@ -19,27 +29,35 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class MainActivity extends Activity implements GLSurfaceView.Renderer{
+public class MainActivity extends Activity implements GLSurfaceView.Renderer, View.OnTouchListener, GestureDetector.OnGestureListener {
+
+    enum InputMode { // Pour les contrôles de la caméra
+        MOVE, ROTATE, UP_DOWN
+    }
+    private InputMode mCurrInputMode = InputMode.MOVE;
+
     ActivityMainBinding mBinding;
 
-    float[] mVerticesData = new float[]{
-            -0.5F, 0.5F, 0.0F,
-            -0.5F, 0.1F, 0.0F,
-            0.5F, 0.1F, 0.0F,
+    private GestureDetector mGestureDetector;
 
-            -0.5F, 0.5F, 0.0F,
-            0.5F, 0.1F, 0.0F,
-            0.5F, 0.5F, 0.0F
+    float[] mVerticesData = new float[]{
+            -0.5F, 0.6F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            -0.5F, 0.1F, 0.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F,
+            0.0F, 0.1F, 0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 1.0F,
+
+            -0.5F, 0.6F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+            0.0F, 0.1F, 0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 1.0F,
+            0.0F, 0.6F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F
     };
 
     float[] mVerticesData2 = new float[]{
-            -0.5F, -0.5F, 0.0F,
-            -0.5F, -0.1F, 0.0F,
-            0.5F, -0.1F, -1.25F,
+            -0.5F, -0.5F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, 1.0F,
+            -0.5F, -0.1F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F,
+            0.5F, -0.1F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F,
 
-            -0.5F, -0.5F, 0.0F,
-            0.5F, -0.1F, -1.25F,
-            0.5F, -0.5F, -1.25F
+            -0.5F, -0.5F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, 1.0F,
+            0.5F, -0.1F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F,
+            0.5F, -0.5F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F
     };
 
     private float[] model;
@@ -53,6 +71,8 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
     final static int BytesPerFloat = 4;
     final static int BytesPerShort = 2;
     final static int FloatsPerPosition = 3;
+    final static int FloatsPerColor = 3;
+    final static int FloatsPerTexture = 2;
     private static String TAG = MainActivity.class.getSimpleName();
 
     private String readAssetFile(String fileName){
@@ -125,7 +145,31 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
 
     private int gl_vArray;
     private int gl_vArray2;
+    private int glTexBuffer;
     private int gl_program;
+
+    private int sendTextureToGl(final int resourceId) {
+        final int[] textureHandle = new int[1];
+        GLES32.glGenTextures(1, textureHandle, 0);
+        if (textureHandle[0] == 0)
+        {
+            throw new RuntimeException("Error generating texture name.");
+        }
+        final int tex = textureHandle[0];
+
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inScaled = false;
+        final Bitmap bitmap = BitmapFactory.decodeResource(getResources(), resourceId, options);
+
+        GLES32.glBindTexture(GLES32.GL_TEXTURE_2D, tex);
+        GLES32.glTexParameteri(GLES32.GL_TEXTURE_2D, GLES32.GL_TEXTURE_MIN_FILTER, GLES32.GL_NEAREST);
+        GLUtils.texImage2D(GLES32.GL_TEXTURE_2D, 0, bitmap, 0);
+        GLES32.glGenerateMipmap(GLES32.GL_TEXTURE_2D);
+        bitmap.recycle();
+
+        return tex;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,6 +178,50 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
         setContentView(mBinding.getRoot());
         mBinding.surfaceView.setEGLContextClientVersion(3);
         mBinding.surfaceView.setRenderer(this);
+        mGestureDetector = new GestureDetector(this, this);
+        mBinding.surfaceView.setOnTouchListener(this);
+        mBinding.moveImageButton.setOnClickListener(v -> {setCurrentInputMode(InputMode.MOVE);});
+        mBinding.rotateImageButton.setOnClickListener(v -> {setCurrentInputMode(InputMode.ROTATE);});
+        mBinding.upDownImageButton.setOnClickListener(v -> {setCurrentInputMode(InputMode.UP_DOWN);});
+        mBinding.resetImageButton.setOnClickListener(v -> {resetCameraPosition();});
+
+        setCurrentInputMode(mCurrInputMode);
+    }
+
+    private float[] camPos = {0, 0, -3}; // Position Vec3 de la caméra
+    private float camXAngle = 0; // Pitch
+    private float camYAngle = 0; // Yaw
+    private void resetCameraPosition() {
+        camPos[0] = 0; camPos[1] = 0; camPos[2] = -3;
+        camXAngle = 0;
+        camYAngle = 0;
+
+        // Matrix.setRotateEulerM(view, 0, camXAngle, camYAngle, 0); // Deprecated, sinon il y a setRotateEulerM2 mais je n'arrive pas à la faire fonctionner (problème de version apparemment)
+        Matrix.setRotateM(view, 0, camXAngle, 1, 0, 0);
+        Matrix.setRotateM(view, 0, camYAngle, 0, 1, 0);
+        Matrix.setRotateM(view, 0, 0, 0, 0, 1);
+        Matrix.translateM(view, 0, camPos[0], camPos[1], camPos[2]);
+    }
+
+    private void setCurrentInputMode(InputMode inputMode) {
+        int selectedColor = Color.argb(255, 255, 200, 0);
+        int notSelectedColor = Color.argb(255, 200, 200, 200);
+        mCurrInputMode = inputMode;
+        if(mCurrInputMode == InputMode.MOVE){
+            mBinding.moveImageButton.setBackgroundColor(selectedColor);
+        }else{
+            mBinding.moveImageButton.setBackgroundColor(notSelectedColor);
+        }
+        if(mCurrInputMode == InputMode.ROTATE){
+            mBinding.rotateImageButton.setBackgroundColor(selectedColor);
+        }else{
+            mBinding.rotateImageButton.setBackgroundColor(notSelectedColor);
+        }
+        if(mCurrInputMode == InputMode.UP_DOWN){
+            mBinding.upDownImageButton.setBackgroundColor(selectedColor);
+        }else{
+            mBinding.upDownImageButton.setBackgroundColor(notSelectedColor);
+        }
     }
 
     private void checkErr(int loop){
@@ -147,6 +235,7 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         GLES32.glClearColor(0.28F,0.56F,0.96F,1.0F);
 
+        glTexBuffer = sendTextureToGl(R.drawable.cobble);
 
         gl_program = createProgram("modelviewprojection");
 
@@ -155,11 +244,14 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
         glModel = GLES32.glGetUniformLocation(gl_program,"a_Model");
         glView = GLES32.glGetUniformLocation(gl_program,"a_View");
         glProjection = GLES32.glGetUniformLocation(gl_program,"a_Projection");
+        int gl_color = GLES32.glGetAttribLocation(gl_program,"a_Color");
+        int gl_texture = GLES32.glGetAttribLocation(gl_program,"a_Texture");
 
-        int[] tmp = sendVertexDataToGL(mVerticesData, gl_position);
+
+        int[] tmp = sendVertexDataToGL(mVerticesData, gl_position, gl_color, gl_texture);
         gl_vArray = tmp[0];
 
-        tmp = sendVertexDataToGL(mVerticesData2, gl_position);
+        tmp = sendVertexDataToGL(mVerticesData2, gl_position, gl_color, gl_texture);
         gl_vArray2 = tmp[0];
 
         model = new float[16];
@@ -174,7 +266,7 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
         Matrix.translateM(view, 0, 0.0F, 0.0F, -3.0F); // Placement initial de la caméra
     }
 
-    private int[] sendVertexDataToGL(float[] data, int gl_position){
+    private int[] sendVertexDataToGL(float[] data, int gl_position, int gl_color, int gl_texture){
         ByteBuffer vertices_data_bytes = ByteBuffer.allocateDirect(data.length*BytesPerFloat)
                 .order(ByteOrder.nativeOrder());
         FloatBuffer vertices_data = vertices_data_bytes.asFloatBuffer();
@@ -193,7 +285,13 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
         GLES32.glBufferData(GLES32.GL_ARRAY_BUFFER, data.length*4, vertices_data, GLES32.GL_STATIC_DRAW);
 
         GLES32.glEnableVertexAttribArray(gl_position);
-        GLES32.glVertexAttribPointer(gl_position, FloatsPerPosition, GLES32.GL_FLOAT, false, FloatsPerPosition*BytesPerFloat, 0);
+        GLES32.glVertexAttribPointer(gl_position, FloatsPerPosition, GLES32.GL_FLOAT, false, (FloatsPerPosition+FloatsPerColor+FloatsPerTexture)*BytesPerFloat, 0);
+
+        GLES32.glEnableVertexAttribArray(gl_color);
+        GLES32.glVertexAttribPointer(gl_color, FloatsPerColor, GLES32.GL_FLOAT, false, (FloatsPerPosition+FloatsPerColor+FloatsPerTexture)*BytesPerFloat, FloatsPerPosition*BytesPerFloat);
+
+        GLES32.glEnableVertexAttribArray(gl_texture);
+        GLES32.glVertexAttribPointer(gl_texture, FloatsPerTexture, GLES32.GL_FLOAT, false, (FloatsPerPosition+FloatsPerColor+FloatsPerTexture)*BytesPerFloat, (FloatsPerPosition+FloatsPerColor)*BytesPerFloat);
 
         return new int[]{gl_array_id, gl_buffer_id};
     }
@@ -220,14 +318,76 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer{
         GLES32.glUniformMatrix4fv(glView, 1, false, view, 0);
         GLES32.glUniformMatrix4fv(glProjection, 1, false, projection, 0);
         
-        int gl_color = GLES32.glGetUniformLocation(gl_program,"a_Color");
-        GLES32.glUniform3f(gl_color, 0.0F, 1.0F, 0.0F);
+        // int gl_color = GLES32.glGetUniformLocation(gl_program,"a_Color");
+        // GLES32.glUniform3f(gl_color, 0.0F, 1.0F, 0.0F);
         GLES32.glBindVertexArray(gl_vArray);
+        GLES32.glBindTexture(GLES32.GL_TEXTURE_2D, glTexBuffer);
         GLES32.glDrawArrays(GLES32.GL_TRIANGLES,0,6);
 
         GLES32.glUniformMatrix4fv(glModel, 1, false, identity, 0);
-        GLES32.glUniform3f(gl_color, 1.0F, 0.0F, 0.0F);
+        // GLES32.glUniform3f(gl_color, 1.0F, 0.0F, 0.0F);
         GLES32.glBindVertexArray(gl_vArray2);
         GLES32.glDrawArrays(GLES32.GL_TRIANGLES,0,6);
+    }
+
+    // GestureDetector.OnGestureListener
+    @Override
+    public boolean onDown(@NonNull MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public void onShowPress(@NonNull MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(@NonNull MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(@Nullable MotionEvent e1, @NonNull MotionEvent e2, float distanceX, float distanceY) {
+        switch (mCurrInputMode){
+            case MOVE:
+                camPos[0] += 5*distanceX/mWidth;
+                camPos[2] += 5*distanceY/mHeight;
+                break;
+            case ROTATE:
+                camXAngle += 30*distanceY/mHeight;
+                camYAngle += 30*distanceX/mWidth;
+                break;
+            case UP_DOWN:
+                camPos[1] -= 10*distanceY/mHeight;
+                break;
+        }
+
+        // Matrix.setRotateEulerM(view, 0, camXAngle, camYAngle, 0);
+        float[] rotationMatrixX = new float[16];
+        float[] rotationMatrixY = new float[16];
+        Matrix.setRotateM(rotationMatrixX, 0, camXAngle, 1, 0, 0);
+        Matrix.setRotateM(rotationMatrixY, 0, camYAngle, 0, 1, 0);
+        Matrix.multiplyMM(view, 0, rotationMatrixY, 0, rotationMatrixX, 0);
+
+        Matrix.translateM(view, 0, camPos[0], camPos[1], camPos[2]);
+
+        return false;
+    }
+
+    @Override
+    public void onLongPress(@NonNull MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onFling(@Nullable MotionEvent e1, @NonNull MotionEvent e2, float velocityX, float velocityY) {
+        return false;
+    }
+
+    // View.OnTouchListener
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        mGestureDetector.onTouchEvent(event);
+        return true;
     }
 }
