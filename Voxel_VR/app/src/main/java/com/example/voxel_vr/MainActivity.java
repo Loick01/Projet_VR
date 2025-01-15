@@ -166,8 +166,13 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer, Vi
         mBinding.rotateImageButton.setOnClickListener(v -> {setCurrentInputMode(InputMode.ROTATE);});
         mBinding.upDownImageButton.setOnClickListener(v -> {setCurrentInputMode(InputMode.UP_DOWN);});
         mBinding.resetImageButton.setOnClickListener(v -> {resetCameraPosition();});
+        mBinding.breakImageButton.setOnClickListener(v -> {tryBreakBlock();});
 
         setCurrentInputMode(mCurrInputMode);
+    }
+
+    private void tryBreakBlock() {
+        // A faire
     }
 
     private float[] camPos = {0, 0, -5}; // Position Vec3 de la caméra
@@ -181,7 +186,7 @@ public class MainActivity extends Activity implements GLSurfaceView.Renderer, Vi
         // Matrix.setRotateEulerM(view, 0, camXAngle, camYAngle, 0); // Deprecated, sinon il y a setRotateEulerM2 mais je n'arrive pas à la faire fonctionner (problème de version apparemment)
         Matrix.setRotateM(view, 0, camXAngle, 1, 0, 0);
         Matrix.setRotateM(view, 0, camYAngle, 0, 1, 0);
-        Matrix.setRotateM(view, 0, 0, 0, 0, 1);
+        //Matrix.setRotateM(view, 0, 0, 0, 0, 1);
         Matrix.translateM(view, 0, camPos[0], camPos[1], camPos[2]);
     }
 

@@ -6,18 +6,24 @@ public class Chunk {
     private Voxel[] voxelsArray;
     private Random randomGenerator = new Random();
     private int numberOfFloat;
-    final static int CHUNK_SIZE = 4;
+    final static int CHUNK_SIZE = 16;
 
     public Chunk(){
         this.voxelsArray = new Voxel[CHUNK_SIZE*CHUNK_SIZE*CHUNK_SIZE];
-        this.numberOfFloat = this.voxelsArray.length * 108;
+        int countFloat = 0;
         for (int k = 0 ; k < CHUNK_SIZE ; k++){
             for (int j = 0 ; j < CHUNK_SIZE ; j++){
                 for (int i = 0 ; i < CHUNK_SIZE ; i++){
-                    this.voxelsArray[k*CHUNK_SIZE*CHUNK_SIZE+j*CHUNK_SIZE+i] = new Voxel(i,j,k,this.randomGenerator.nextInt(5));
+                    if (this.randomGenerator.nextInt(10)<=4) {
+                        ++countFloat;
+                        this.voxelsArray[k * CHUNK_SIZE * CHUNK_SIZE + j * CHUNK_SIZE + i] = new Voxel(i, j, k, this.randomGenerator.nextInt(5));
+                    }else{
+                        this.voxelsArray[k * CHUNK_SIZE * CHUNK_SIZE + j * CHUNK_SIZE + i] = null;
+                    }
                 }
             }
         }
+        this.numberOfFloat = countFloat * 108;
     }
 
     public int getNumberOfFloat(){
@@ -28,10 +34,12 @@ public class Chunk {
         ArrayList<Float> arrayList = new ArrayList<>();
         int compteur = 0;
         for (int v = 0 ; v < this.voxelsArray.length ; v++){
-            float[] t = this.voxelsArray[v].getVertices();
-            for (float value : t){
-                ++compteur;
-                arrayList.add(value);
+            if (this.voxelsArray[v] != null) {
+                float[] t = this.voxelsArray[v].getVertices();
+                for (float value : t) {
+                    ++compteur;
+                    arrayList.add(value);
+                }
             }
         }
         float[] res = new float[compteur];
